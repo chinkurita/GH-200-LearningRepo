@@ -1,7 +1,5 @@
 name: variables
-
 on: push
-
 env:                                    # Workflow-level
   WORKSHOP_NAME: "GH-200 CoHack"
   TRAINER: "Himanshu Kumar"
