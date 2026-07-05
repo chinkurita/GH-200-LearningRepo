@@ -25,6 +25,6 @@ jobs:
 
      - name: 🖥️ Run Greeting Shell Script (Enhancement 4)
        run: |
-         chmod +x scripts/greet.sh
+         chmod +x scripts/greets.sh
          ./scripts/greets.sh
        
