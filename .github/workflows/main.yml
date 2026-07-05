@@ -8,3 +8,9 @@ jobs:
    steps:
      - name: "say hellow"
        run: echo "Hello world this is a pen $GOD_NAME"
+
+     - name: "checkout files"
+       uses: actions/checout@v5
+
+     - name: "list all the files"
+       run: ls -la
