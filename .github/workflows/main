@@ -1,0 +1,10 @@
+name: "My CICD pipeline"
+on: push
+jobs:
+ hello-ji:
+   runs-on: ubuntu-latest
+   env: 
+     GOD_NAME: "Saraph of the end"
+   steps:
+     - name: "say hellow to $GOD_NAME"
+       run: echo "Hello world this is a pen
