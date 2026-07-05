@@ -48,3 +48,11 @@ jobs:
           echo "Branch   : $GITHUB_REF_NAME" >> build-output/build-report.txt
           echo "Built at : $(date)"       >> build-output/build-report.txt
           cat build-output/build-report.txt
+          
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: "build-artifact"
+        archive: true
+        retention-days: 1
+        path: "build-output/*"
