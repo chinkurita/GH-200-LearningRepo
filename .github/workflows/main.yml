@@ -53,6 +53,16 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: "build-artifact"
-        archive: true
         retention-days: 1
         path: "build-output/*"
+
+    - name: Secreat and variable
+      env:
+        SECRET: ${{ secrets.MY_API_KEY }}
+        VAR: ${{ vars.ACTIONS_RUNNER_DEBUG }}
+      run: |
+        echo "Secret configured: ${{ secrets.MY_API_KEY != '' }}"
+        echo "secret value $SECRET"
+        echo "---------------------"
+        echo "variable configured: ${{ vars.ACTIONS_RUNNER_DEBUG != '' }}"
+        echo "variable value $VAR"
