@@ -1,5 +1,7 @@
 name: "My CICD pipeline"
 on: push
+env:
+  WORKSHOP_NAME: "Tinku-Jiya-AK47"
 jobs:
  hello-ji:
    runs-on: ubuntu-latest
@@ -36,3 +38,13 @@ jobs:
   steps:
     - name: checkout
       uses: actions/checkout@v5
+
+    - name: 🔨 Create Build Report
+      run: |
+          mkdir -p build-output
+          echo "=== Build Report ===" > build-output/build-report.txt
+          echo "Workshop : $WORKSHOP_NAME" >> build-output/build-report.txt
+          echo "Commit   : $GITHUB_SHA"   >> build-output/build-report.txt
+          echo "Branch   : $GITHUB_REF_NAME" >> build-output/build-report.txt
+          echo "Built at : $(date)"       >> build-output/build-report.txt
+          cat build-output/build-report.txt
