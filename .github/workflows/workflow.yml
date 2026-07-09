@@ -12,5 +12,6 @@ on:
 jobs:
   rahul:
     runs-on: ubuntu-22.04
-    name: pokemon pikachu
-    run: echo "hello workls:cancel-timeout-minutes: "
+    steps:
+      - name: pokemon pikachu
+        run: echo "hello workls:cancel-timeout-minutes:"
