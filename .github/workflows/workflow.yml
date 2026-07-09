@@ -11,7 +11,7 @@ on:
 
 jobs:
   rahul:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: pokemon pikachu
         run: echo "hello workls:cancel-timeout-minutes:"
