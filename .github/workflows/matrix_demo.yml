@@ -1,0 +1,23 @@
+name: Matrix Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        environment:
+          - dev
+          - qa
+          - prod
+        color: [red, blue, green]
+        include:
+          - color: red
+            environment: uat
+
+    steps:
+      - name: Print Environment
+        run: echo "Deploying to ${{ matrix.environment }}, ${{ matrix.color }}"
