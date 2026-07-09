@@ -1,0 +1,14 @@
+name: docker build
+on: workflow_dispatch
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v5
+
+      # - name: install and setup docker file
+      #   uses: docker/setup-docker-action@v5
+
+      - name: build docker file
+        run: docker build -t carvilla:v1.0 carvilla-v1.0
