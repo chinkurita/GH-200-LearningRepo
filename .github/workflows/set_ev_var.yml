@@ -1,0 +1,12 @@
+name: Setting Env Variable
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    steps:
+      - name: setting env var
+        run: echo "::set-env name=FOO::bar"
+
+      - name: using env var
+        run: echo "$FOO"
