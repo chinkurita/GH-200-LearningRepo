@@ -6,7 +6,7 @@ jobs:
     name: Build
     steps:
       - name: setting env var
-        run: echo "::set-env name=FOO::bar"
+        run: echo "FOO=bar" >> $GITHUB_ENV
 
       - name: using env var
         run: echo "$FOO"
