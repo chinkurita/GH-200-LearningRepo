@@ -1,0 +1,22 @@
+name: Reusable caller workflow
+on: workflow_dispatch
+jobs:
+  calling-fnct:
+    runs-on: ubuntu-latest
+    env:
+      REUSE_WORKFLOW: 
+    steps:
+      - name: Usecase 1
+        uses: ./.github/workflows/reusable_workflow.yml
+        with:
+         name: Germa-bikear-end
+      - name: usecase 2
+        uses: ./.github/workflows/reusable_workflow.yml
+        with:
+          name: Notty-dotty
+          car: FZ1
+      - name: usecase 3
+        uses: ./.github/workflows/reusable_workflow.yml
+        with:
+          name: Notty-dotty
+          car: Ferrari-91
