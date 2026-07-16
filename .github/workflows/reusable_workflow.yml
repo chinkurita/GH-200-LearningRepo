@@ -11,8 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: 
-      CAR: ${{ inputs.car }}
     steps:
       - name: Print both Name and Car
         run: |
@@ -22,6 +20,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    env: 
+      CAR: ${{ inputs.car }}
     steps:
       - name: Check for Bike in Name
         run: |
@@ -30,6 +30,7 @@ jobs:
           fi
       - name: Check for Car length in Car
         run: |
+          echo "Length of car: ${#CAR}" 
           if [[ ${#CAR} -gt 4 ]]; then
             echo "::warning:: Length of car name is too long > 4"
           fi
