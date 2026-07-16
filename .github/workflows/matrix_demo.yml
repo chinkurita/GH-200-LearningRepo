@@ -22,4 +22,9 @@ jobs:
 
     steps:
       - name: Print Environment
+        if: ${{ matrix.color == 'red' }}
         run: echo "Deploying to ${{ matrix.environment }}, ${{ matrix.color }}"
+
+      - name: conditional run
+        if: ${{matrix.color == 'green' }}
+        run: echo "skip"
