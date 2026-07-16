@@ -17,6 +17,8 @@ jobs:
         include:
           - color: red
             environment: uat
+          - color: red
+            environment: blue
 
     steps:
       - name: Print Environment
