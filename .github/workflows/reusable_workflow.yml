@@ -30,7 +30,7 @@ jobs:
           fi
       - name: Check for Car length in Car
         run: |
-          if [${#CAR} -gt 4]; then
+          if [[ ${#CAR} -gt 4 ]]; then
             echo "::warning:: Length of car name is too long > 4"
           fi
       
