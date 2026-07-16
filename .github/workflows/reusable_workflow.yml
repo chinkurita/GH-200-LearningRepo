@@ -25,7 +25,7 @@ jobs:
     steps:
       - name: Check for Bike in Name
         run: |
-          if[[ ${{ inputs.name }} == *bike* ]]; then
+          if [[ ${{ inputs.name }} == *bike* ]]; then
             echo "Name contain Bike"
           fi
       - name: Check for Car length in Car
