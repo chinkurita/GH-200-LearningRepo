@@ -10,7 +10,7 @@ jobs:
       - name: generate version
         id: version
         run: |
-          echo "app_version=1.0.${{ github.run_number }} / ${{ github.repository }} " >> $GITHUB.output
+          echo "app_version=1.0.${{ github.run_number }} / ${{ github.repository }} " >> $GITHUB.OUTPUT
 
       - name: show output inside job
         run: |
