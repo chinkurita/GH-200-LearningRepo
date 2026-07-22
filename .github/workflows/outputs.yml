@@ -13,7 +13,7 @@ jobs:
         id: version
         shell: pwsh
         run: |
-          echo "app_version=1.0.${{ github.run_number }} / ${{ github.repository }} " >> $GITHUB_OUTPUT
+          echo "app_version=1.0.${{ github.run_number }} / ${{ github.repository }} " >> $env:GITHUB_OUTPUT
 
       - name: show output inside job
         shell: pwsh
