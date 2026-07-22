@@ -6,13 +6,17 @@ jobs:
   build:
     runs-on: windows-latest
     name: namakool_built
+    outputs:
+      gattu_version: ${{ steps.version.outputs.app_version }}
     steps:
       - name: generate version
         id: version
+        shell: pwsh
         run: |
           echo "app_version=1.0.${{ github.run_number }} / ${{ github.repository }} " >> $GITHUB_OUTPUT
 
       - name: show output inside job
+        shell: pwsh
         run: |
           echo "Version is ${{steps.version.outputs.app_version}}"
 
@@ -22,5 +26,5 @@ jobs:
     steps:
       - name: Read output from previous step
         run: |
-          echo "Deploying version ${{ needs.build.outputs.app_version }}"
+          echo "Deploying version ${{ needs.build.outputs.gattu_version }}"
         
