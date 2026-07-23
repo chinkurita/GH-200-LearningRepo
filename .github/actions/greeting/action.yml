@@ -1,0 +1,44 @@
+name: Greeting Action
+
+description: Greets a user
+
+inputs:
+
+  username:
+
+    description: Name of user
+
+    required: true
+
+outputs:
+
+  final_message:
+
+    description: Greeting
+
+    value: ${{ steps.msg.outputs.text }}
+
+runs:
+
+  using: composite
+
+  steps:
+
+    - name: Print Greeting
+      shell: bash
+      run: |
+        echo "Hello ${{ inputs.username }}"
+
+    - name: Print Date
+      shell: bash
+      run: date
+
+    - name: Print Runner
+      shell: bash
+      run: |
+        echo "Running on $RUNNER_OS"
+
+    - id: msg
+      shell: bash
+      run: |
+        echo "text=Welcome ${{ inputs.username }}" >> $GITHUB_OUTPUT
