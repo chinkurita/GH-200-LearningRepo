@@ -2,7 +2,12 @@ name: Composite Lab 1
 
 on:
   workflow_dispatch:
-
+      inputs:
+        username:
+          description: Enter your name
+          required: true
+          default: Deepanshu
+          type: string
 jobs:
 
   demo:
@@ -17,7 +22,7 @@ jobs:
         id: greet
         uses: ./.github/actions/greeting
         with:
-          username: Deepanshu
+          username: ${{ inputs.username }}
 
       - name: Show Output
         run: |
